@@ -25,7 +25,7 @@ public class tests {
     public void switchedElementTesr() {
         Main q = new Main();
         int[] input = {5, 6, 7, 8, 10, 9};
-        int[] res = {1, 2, 3, 4, 5, 6};
+        int[] res = {5, 6, 7, 8, 9, 10};
         q.sort(input);
         assertArrayEquals(input, res);
     }
@@ -51,27 +51,27 @@ public class tests {
     @Test
     public void negativeElementTest() {
         Main q = new Main();
-        int[] arr_in = {5, -6, 4, 3, 2, 1};
+        int[] input = {5, -6, 4, 3, 2, 1};
         int[] res = {-6, 1, 2, 3, 4, 5};
-        q.sort(arr_in);
-        assertArrayEquals(arr_in, res);
+        q.sort(input);
+        assertArrayEquals(input, res);
     }
     @Test
     public void emptyArrTest() {
         Main q = new Main();
-        int[] arr_in = {};
+        int[] input = {};
         int[] res = {};
-        q.sort(arr_in);
-        assertArrayEquals(arr_in, res);
+        q.sort(input);
+        assertArrayEquals(input, res);
     }
 
     @Test
     public void oneElemTest(){
         Main q = new Main();
-        int[] arr = {1};
+        int[] input = {1};
         int[] res = {1};
-        q.sort(arr);
-        Assertions.assertArrayEquals(arr, res);
+        q.sort(input);
+        assertArrayEquals(input, res);
     }
 
 }
