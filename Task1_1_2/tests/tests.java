@@ -14,21 +14,21 @@ public class test {
     public void fileIsEmpty() throws IOException, Word.NoStringFoundExeption {
         Word main = new Word();
         Word.NoStringFoundExeption e = assertThrows(Word.NoStringFoundExeption.class, () ->
-        {Integer[] x = main.finding_word("", "test.txt");});
+        {Integer[] x = main.finding_word("", "text.txt");});
         assertEquals("The substring is empty",  e.getMessage());
     }
 
     @Test
     public void normalTest() throws IOException, Word.NoStringFoundExeption {
         Word main = new Word();
-        Integer[] x = main.finding_word("hello I'm Jon. Hi I am Peter. There is a frog. Frog eats people. !", "test.txt");
+        Integer[] x = main.finding_word("hello I'm Jon. Hi I am Peter. There is a frog. Frog eats people. !", "text.txt");
         assert(x[0]==0);
     }
 
     @Test
     public void erorrString() throws IOException, Word.NoStringFoundExeption {
         Word main = new Word();
-        Integer[] x = main.finding_word("Hi I am Peterr", "test.txt");
+        Integer[] x = main.finding_word("Hi I am Peterr", "text.txt");
         Integer[] y = {};
         assertEquals(x,y);
     }
@@ -36,7 +36,7 @@ public class test {
     @Test
     public void findInEmptyFile () throws IOException, Word.NoStringFoundExeption {
         Word main = new Word();
-        Integer[] x  main.finding_word("hello", "test1.txt");
+        Integer[] x  main.finding_word("hello", "text1.txt");
         Integer[] y = {};
         assertEquals(x,y);
     }
@@ -44,7 +44,7 @@ public class test {
     @Test
     public void substringSring() throws IOException, Word.NoStringFoundExeption {
         Word main = new Word();
-        Integer[] x = main.finding_word("aabaab", "test2.txt");
+        Integer[] x = main.finding_word("aabaab", "text2.txt");
         assert(x[0]==0 && x[1]==10 && x[2]==13 && x[3]==16);
     }
 
@@ -52,6 +52,6 @@ public class test {
     public void fileNotFound() throws IOException {
         Word main = new Word();
         IOException e = assertThrows(IOException.class, () -> {Integer[] a = main.finding_word("hello", "testX.txt");});
-        assertEquals("testX.txt (Не удается найти указанный файл)",  e.getMessage());
+        assertEquals("textX.txt (Не удается найти указанный файл)",  e.getMessage());
     }
 }
