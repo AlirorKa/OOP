@@ -18,12 +18,13 @@ class Word {
     /**
      *
      * @param str искомая строка
-     * @return pi-function from str (the length of max prefix of str for each symbol of str)
+     * @return pi-функция str (длина максимального префикса str для каждого символа искомой строки)
      */
     public int[] piFunc(String str) {
         int n = str.length();
         int[] pi = new int[n];
         pi[0] = 0;
+        
         for (int i = 1; i < n; ++i) {
             int j = pi[i - 1];
             while (j > 0 && str.charAt(i) != str.charAt(j))
@@ -51,10 +52,12 @@ class Word {
         } catch (FileNotFoundException e) {
             throw e;
         }
+        
         if (m == 0){
             NoStringFoundExeption e = new NoStringFoundExeption(str, "The substring is empty");
             throw e;
         }
+        
         p = piFunc(str);
 
         ArrayList<Integer> out = new ArrayList<Integer>();
@@ -62,6 +65,7 @@ class Word {
         int sym = bufferedReader.read();
         int j = 0;
         int i;
+        
         for (i = 0; sym != -1; i++) {
             char c = (char) sym;
             sym = bufferedReader.read();
