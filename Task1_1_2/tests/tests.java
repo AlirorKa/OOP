@@ -21,7 +21,7 @@ public class test {
     @Test
     public void normalTest() throws IOException, Word.NoStringFoundExeption {
         Word main = new Word();
-        Integer[] x = main.finding_word("hello I'm Jon. Hi I am Peter. There is a frog. Frog eats people. !", "text.txt");
+        Integer[] x = main.finding_word("hello I'm Aloce. Hi I am George. There is a unicorn. Unicorns can fly O.O", "text.txt");
         assert(x[0]==0);
     }
 
@@ -52,6 +52,6 @@ public class test {
     public void fileNotFound() throws IOException {
         Word main = new Word();
         IOException e = assertThrows(IOException.class, () -> {Integer[] a = main.finding_word("hello", "testX.txt");});
-        assertEquals("textX.txt (Не удается найти указанный файл)",  e.getMessage());
+        assertEquals("textX.txt (File not Found)",  e.getMessage());
     }
 }
