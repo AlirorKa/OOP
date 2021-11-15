@@ -5,7 +5,7 @@ import java.util.*;
 
 
     public class stack<T> {
-        // @SuppressWarnings("unchecked")
+
         private int size = 0;
         private int top = -1;
         private T[] arr = ((T[]) new Object[0]);
