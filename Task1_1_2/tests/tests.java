@@ -11,7 +11,7 @@ import static org.testng.Assert.assertNotNull;
 public class test {
 
     @Test
-    public void fileIsEmpty() throws IOException, Word.NoStringFoundExeption {
+    public void substringIsEmpty() throws IOException, Word.NoStringFoundExeption {
         Word main = new Word();
         Word.NoStringFoundExeption e = assertThrows(Word.NoStringFoundExeption.class, () ->
         {Integer[] x = main.finding_word("", "text.txt");});
@@ -26,7 +26,7 @@ public class test {
     }
 
     @Test
-    public void erorrString() throws IOException, Word.NoStringFoundExeption {
+    public void wrongSubstring() throws IOException, Word.NoStringFoundExeption {
         Word main = new Word();
         Integer[] x = main.finding_word("Hi I am Peterr", "text.txt");
         Integer[] y = {};
@@ -42,7 +42,7 @@ public class test {
     }
 
     @Test
-    public void substringSring() throws IOException, Word.NoStringFoundExeption {
+    public void coupleSubstrings() throws IOException, Word.NoStringFoundExeption {
         Word main = new Word();
         Integer[] x = main.finding_word("aabaab", "text2.txt");
         assert(x[0]==0 && x[1]==10 && x[2]==13 && x[3]==16);
