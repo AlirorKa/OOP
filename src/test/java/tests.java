@@ -11,80 +11,78 @@ public class tests {
     void empty_Stack_test() throws Exception{
         Main q = new Main();   
 
-        Exception e = assertThrows(Exception.class, () -> {Integer a = (Integer) s.pop();});
+        Exception e = assertThrows(Exception.class, () -> {Integer a = (Integer) q.pop();});
         assertEquals(e.getMessage(),"Stack is empty");
 
-        Exception e1 = assertThrows(Exception.class, () -> {
-            stack a =  s.popStack(3);});
+        Exception e1 = assertThrows(Exception.class, () -> {stack a =  q.popStack(3);});
         assertEquals(e1.getMessage(),"Stack is empty");
     }
 
     void pop_stack_test() throws Exception{
-        stack<Integer> s = new stack();
-        s.push(1);
-        Exception e = assertThrows(Exception.class, () -> {
-            stack a =  s.popStack(3);});
+        stack<Integer> q = new stack();
+        q.push(1);
+        Exception e = assertThrows(Exception.class, () -> {stack a =  q.popStack(3);});
         assertEquals(e.getMessage(),"Not enough elements in stack");
     }
 
     @Test
     void func_working_Integer_test() throws Exception {
-        stack<Integer> s = new stack();
-        s.push((Integer)1);
-        s.push((Integer)2);
-        s.push((Integer)3);
+        stack<Integer> q = new stack();
+        q.push((Integer)1);
+        q.push((Integer)2);
+        q.push((Integer)3);
 
-        Integer x= (Integer) s.pop();
+        Integer x = (Integer) q.pop();
         assert (x == 3);
 
-        x = s.pop();
+        x = q.pop();
         assert(x == 2);
 
-        x = s.pop();
+        x = q.pop();
         assert(x == 1);
     }
     @Test
     void func2_working_Integer_test() throws Exception{
-        stack<Integer> s = new stack();
+        stack<Integer> q = new stack();
         stack<Integer> a = new stack();
         Integer x;
-        s.push((Integer)1);
-        s.push((Integer)2);
-        s.push((Integer)3);
+        q.push((Integer)1);
+        q.push((Integer)2);
+        q.push((Integer)3);
 
-        a = s.popStack(2);
+        a = q.popStack(2);
         assert(a.count()==2 && s.count()==1);
 
-        x = s.pop();
+        x = q.pop();
         assert(x == 1);
         s.push(x);
 
-        x = a.pop();
+        x = q.pop();
         assert(x == 3);
         a.push(x);
 
-        s.pushStack(a);
+        q.pushStack(a);
         assert(s.count()==3);
 
-        x=s.pop();
+        x = q.pop();
         assert(x == 3);
     }
 
     @Test
     void func_working_String_test() throws Exception {
-        stack<String> s = new stack();
+        stack<String> q = new stack();
 
-        s.push((String)"1");
-        s.push((String)"2");
-        s.push((String)"3");
+        q.push((String)"1");
+        q.push((String)"2");
+        q.push((String)"3");
 
-        String x = (String) s.pop();
+        String x = (String) q.pop();
         assert (x == "3");
 
-        x=s.pop();
+        x = q.pop();
         assert(x == "2");
 
-        x=s.pop();
+        x = q.pop();
         assert(x == "1");
     }
 
