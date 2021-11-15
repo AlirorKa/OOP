@@ -18,7 +18,7 @@ public class tests {
         assertEquals(e1.getMessage(),"Stack is empty");
     }
 
-    void pop_stack_test() throws Exception{
+    void notEnoughElements_popStack() throws Exception{
         stack<Integer> q = new stack();
         q.push(1);
         Exception e = assertThrows(Exception.class, () -> {stack a =  q.popStack(3);});
