@@ -51,18 +51,18 @@ public class tests {
         q.push((Integer)3);
 
         a = q.popStack(2);
-        assert(a.count()==2 && s.count()==1);
+        assert(a.count()==2 && q.count()==1);
 
         x = q.pop();
         assert(x == 1);
-        s.push(x);
+        q.push(x);
 
         x = q.pop();
         assert(x == 3);
         a.push(x);
 
         q.pushStack(a);
-        assert(s.count()==3);
+        assert(q.count()==3);
 
         x = q.pop();
         assert(x == 3);
