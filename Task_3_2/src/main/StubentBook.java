@@ -8,7 +8,7 @@ public class StudentBook {
     private int MAX_NUMBER_OF_SEMESTERS;
     private int semNumbers;
 
-    StudentBook(int max_num_of_Semesters) throws Exception {
+    public StudentBook(int max_num_of_Semesters) throws Exception {
         if (max_num_of_Semesters <= 0)
             throw new Exception("Кол-во семестров не может быть отрицательным.");
 
@@ -110,18 +110,18 @@ public class StudentBook {
     }
 
     /**
-     * @return - true if it is possible to get Hons
-     * @throws Exception - throws if there are no subjects
+     * @return - true если есть возможность получить диплом с отличием
+     * @throws Exception - если не предметов для расчёта
      */
     public boolean isHonorsDegree() throws Exception {
-        boolean hons = true;
+        boolean honor = true;
         int great = 0;
         int count = 0;
         int tmp;
 
         for (int i = 0; i < semNumbers; i++) {
             if ((tmp = semester.get(i).getGreatGrades()) < 0) {
-                hons = false;
+                honor = false;
                 break;
             }
             else if (tmp > 0) {
@@ -131,8 +131,8 @@ public class StudentBook {
         }
 
         if ((count != 0) && (((float) great / (float) count) * 100 < 75.0))
-            hons = false;
+            honor = false;
 
-        return hons;
+        return honor;
     }
 }
