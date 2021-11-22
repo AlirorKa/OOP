@@ -9,13 +9,13 @@ public class Test_Semester {
     @Test
     public void Add_Subjects() throws Exception {
         Semester semestr = new Semester(12);
-        String s = "1";
+        String s = "a";
         for (int i = 0; i < semestr.getMAX_NUMBERS_OF_SUBJECTS(); i++) {
             semestr.addSubject(s, 0, false);
-            s += "1";
+            s += "a";
         }
         Exception e = Assertions.assertThrows(Exception.class, () -> {
-            semestr.addSubject("новый", 0, false);
+            semestr.addSubject("b", 0, false);
         });
 
         Assertions.assertEquals("Слишком много предметов.", e.getMessage());
