@@ -63,7 +63,7 @@ public class Test_Semester {
 
     @Test
     public void isScholarship() throws Exception {
-        Semester semestr = new Semester(20);
+        Semester semestr = new Semester(12);
 
         semestr.addSubject("Модели вычислений", 4, false);
         semestr.addSubject("Декларативное программирование", 4, false);
