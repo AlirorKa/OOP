@@ -65,7 +65,7 @@ public class Test_SB {
 
         stBooK.addSemester(12);
 
-        stBooK.addSubject(1, "Разработка ПАК", 0, true);
+        stBooK.addSubject(1, "Квалифицированная работа", 0, true);
         stBooK.addSubject(1, "Алгебра", 3, false);
         stBooK.addSubject(1, "Введение в математический анализ", 4, false);
         stBooK.addSubject(1, "Имперавное пограммирование", 5, false);
@@ -77,7 +77,7 @@ public class Test_SB {
 
         stBooK.addSemester(12);
 
-        stBooK.addSubject(2, "Разработка ПАК", 5, true);
+        stBooK.addSubject(2, "Квалифицированная работа", 5, true);
         stBooK.addSubject(2, "Алгебра", 4, true);
         stBooK.addSubject(2, "Введение в математический анализ", 4, true);
         stBooK.addSubject(2, "Имперавное пограммирование", 5, true);
@@ -98,7 +98,7 @@ public class Test_SB {
         });
         Assertions.assertEquals("Неверный номер семестра", e.getMessage());
 
-        stBooK.addSubject(1, "Разработка ПАК", 0, true);
+        stBooK.addSubject(1, "Квалифицированная работа", 0, true);
         stBooK.addSubject(1, "Алгебра", 3, false);
         stBooK.addSubject(1, "Введение в математический анализ", 4, false);
         stBooK.addSubject(1, "Имперавное пограммирование", 5, false);
@@ -108,7 +108,7 @@ public class Test_SB {
 
         Assertions.assertFalse(stBooK.isScholarship(1));
 
-        stBooK.addSubject(2, "Разработка ПАК", 5, true);
+        stBooK.addSubject(2, "Квалифицированная работа", 5, true);
         stBooK.addSubject(2, "Алгебра", 4, true);
         stBooK.addSubject(2, "Введение в математический анализ", 4, true);
         stBooK.addSubject(2, "Имперавное пограммирование", 5, true);
@@ -124,7 +124,7 @@ public class Test_SB {
         StudentBook stBooK = new StudentBook(10);
 
         stBooK.addSemester(12);
-        stBooK.addSubject(1, "Разработка ПАК", 0, true);
+        stBooK.addSubject(1, "Квалифицированная работа", 0, true);
         stBooK.addSubject(1, "Алгебра", 3, false);
         stBooK.addSubject(1, "Введение в математический анализ", 4, false);
         stBooK.addSubject(1, "Имперавное пограммирование", 5, false);
@@ -134,7 +134,7 @@ public class Test_SB {
 
 
         stBooK.addSemester(20);
-        stBooK.addSubject(2, "Разработка ПАК", 5, true);
+        stBooK.addSubject(2, "Квалифицированная работа", 5, true);
         stBooK.addSubject(2, "Алгебра", 4, true);
         stBooK.addSubject(2, "Введение в математический анализ", 4, true);
         stBooK.addSubject(2, "Имперавное пограммирование", 5, true);
