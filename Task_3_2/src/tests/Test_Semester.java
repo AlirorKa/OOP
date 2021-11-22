@@ -33,7 +33,7 @@ public class Test_Semester {
 
     @Test
     public void Average_Grade() throws Exception {
-        Semester semestr = new Semester(20);
+        Semester semestr = new Semester(12);
 
         Assertions.assertEquals(0, semestr.getSubjectNumbers());
         Assertions.assertEquals(0, semestr.getAverageGrade());
