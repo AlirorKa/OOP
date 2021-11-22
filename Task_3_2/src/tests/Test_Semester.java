@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 public class Test_Semester {
 
     @Test
-    public void AddingSubjects() throws Exception {
+    public void Add_Subjects() throws Exception {
         Semester semestr = new Semester(12);
         String s = "1";
         for (int i = 0; i < semestr.getMAX_NUMBERS_OF_SUBJECTS(); i++) {
@@ -32,7 +32,7 @@ public class Test_Semester {
     }
 
     @Test
-    public void AverageResult() throws Exception {
+    public void Average_Grade() throws Exception {
         Semester semestr = new Semester(20);
 
         Assertions.assertEquals(0, semestr.getSubjectNumbers());
