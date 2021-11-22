@@ -9,14 +9,15 @@ public class Test_Semester {
     @Test
     public void Add_Subjects() throws Exception {
         Semester semestr = new Semester(12);
-        String s = "a";
+        String s = "1";
         for (int i = 0; i < semestr.getMAX_NUMBERS_OF_SUBJECTS(); i++) {
             semestr.addSubject(s, 0, false);
-            s += "a";
+            s += "1";
         }
         Exception e = Assertions.assertThrows(Exception.class, () -> {
-            semestr.addSubject("b", 0, false);
+            semestr.addSubject("новый", 0, false);
         });
+
         Assertions.assertEquals("Слишком много предметов.", e.getMessage());
 
         Semester semestr2 = new Semester(12);
@@ -88,7 +89,7 @@ public class Test_Semester {
         Exception e = Assertions.assertThrows(Exception.class, () -> { semestr.getGreatGrades();});
         Assertions.assertEquals("Нету предметов.", e.getMessage());
 
-        semestr.addSubject("Модели вычислений", 5, true);
+        semestr.addSubject("Квалифицированная работа", 0, true);
         semestr.addSubject("Декларативное программирование", 5, true);
         semestr.addSubject("Цифровые платформы", 5, true);
         semestr.addSubject("Операционные системы", 4, true);
@@ -96,7 +97,7 @@ public class Test_Semester {
 
         Assertions.assertEquals(2, semestr.getGreatGrades());
 
-        semestr.addSubject("Модели вычислений", 4, true);
+        semestr.addSubject("Квалифицированная работа", 4, true);
 
         Assertions.assertEquals(0, semestr.getGreatGrades());
     }
