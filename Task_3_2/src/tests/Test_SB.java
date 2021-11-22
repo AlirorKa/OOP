@@ -5,7 +5,7 @@ import main.StudentBook;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class TestStudentBook {
+public class Test_SB {
 
     @Test
     public void AddingSemesters() throws Exception {
@@ -26,37 +26,35 @@ public class TestStudentBook {
     }
 
     @Test
-    public void AddingSubject() throws Exception {
+    public void Add_Subject() throws Exception {
         StudentBook stBooK = new StudentBook(10);
         Exception e;
 
         stBooK.addSemester(12);
 
-        // Non-existent semester
         e = Assertions.assertThrows(Exception.class, () -> {
-            stBooK.addSubject(-1, "Algebra", 5, false);
+            stBooK.addSubject(-1, "ТВ и МС", 5, false);
         });
         Assertions.assertEquals("Семестра не существует.", e.getMessage());
 
-        // Incorrect parameters
         e = Assertions.assertThrows(Exception.class, () -> {
-            stBooK.addSubject(1, "", 5, false);
+            stBooK.addSubject(1, "", 3, false);
         });
         Assertions.assertEquals("Неверные данные.", e.getMessage());
 
         e = Assertions.assertThrows(Exception.class, () -> {
-            stBooK.addSubject(1, null, 5, false);
+            stBooK.addSubject(1, null, 3, false);
         });
         Assertions.assertEquals("Неверные данные.", e.getMessage());
 
         e = Assertions.assertThrows(Exception.class, () -> {
-            stBooK.addSubject(1, "Algebra", 10, false);
+            stBooK.addSubject(1, "ТВ и МС", 25, false);
         });
         Assertions.assertEquals("Неверные данные.", e.getMessage());
 
-        stBooK.addSubject(1, "Algebra", 4, false);
-        stBooK.addSubject(1, "Set Theory", 4, false);
-        stBooK.addSubject(1, "Programming", 4, false);
+        stBooK.addSubject(1, "ТВ и МС", 5, false);
+        stBooK.addSubject(1, "ДУ и ТФПК", 4, false);
+        stBooK.addSubject(1, "ООП", 3, false);
         Assertions.assertEquals(3, stBooK.getSemester(1).getSubjectNumbers());
     }
 
@@ -65,29 +63,29 @@ public class TestStudentBook {
         StudentBook stBooK = new StudentBook(10);
         Exception e;
 
-        stBooK.addSemester(20);
+        stBooK.addSemester(12);
 
-        stBooK.addSubject(1, "Project", 0, true);
-        stBooK.addSubject(1, "Analysis", 3, false);
-        stBooK.addSubject(1, "Discrete Math", 4, false);
-        stBooK.addSubject(1, "Declarative Programming", 5, false);
-        stBooK.addSubject(1, "Imperative Programming", 4, false);
-        stBooK.addSubject(1, "History", 5, true);
-        stBooK.addSubject(1, "Speech", 5, true);
+        stBooK.addSubject(1, "Разработка ПАК", 0, true);
+        stBooK.addSubject(1, "Алгебра", 3, false);
+        stBooK.addSubject(1, "Введение в математический анализ", 4, false);
+        stBooK.addSubject(1, "Имперавное пограммирование", 5, false);
+        stBooK.addSubject(1, "Английский", 4, false);
+        stBooK.addSubject(1, "Физра", 5, true);
+        stBooK.addSubject(1, "Основы культры речи", 5, true);
 
-        Assertions.assertEquals(4.3, Math.round(stBooK.getAverageResult() *  10.0) / 10.0 );
+        Assertions.assertEquals(4.3, Math.round(stBooK.getAverageGrade() *  10.0) / 10.0 );
 
-        stBooK.addSemester(20);
+        stBooK.addSemester(12);
 
-        stBooK.addSubject(2, "Project", 5, true);
-        stBooK.addSubject(2, "Analysis", 4, true);
-        stBooK.addSubject(2, "Discrete Math", 4, true);
-        stBooK.addSubject(2, "Declarative Programming", 5, true);
-        stBooK.addSubject(2, "Imperative Programming", 5, true);
-        stBooK.addSubject(2, "English", 4, false);
-        stBooK.addSubject(2, "Digital Platforms", 5, true);
+        stBooK.addSubject(2, "Разработка ПАК", 5, true);
+        stBooK.addSubject(2, "Алгебра", 4, true);
+        stBooK.addSubject(2, "Введение в математический анализ", 4, true);
+        stBooK.addSubject(2, "Имперавное пограммирование", 5, true);
+        stBooK.addSubject(2, "Английский", 5, false);
+        stBooK.addSubject(2, "Физра", 4, false);
+        stBooK.addSubject(2, "Основы культры речи", 5, true);
 
-        Assertions.assertEquals(4.4, Math.round(stBooK.getAverageResult() *  10.0) / 10.0 );
+        Assertions.assertEquals(4.4, Math.round(stBooK.getAverageGrade() *  10.0) / 10.0 );
     }
 
     @Test
@@ -98,27 +96,25 @@ public class TestStudentBook {
         e = Assertions.assertThrows(Exception.class, () -> {
             stBooK.isScholarship(1);
         });
-        Assertions.assertEquals("Incorrect semester number", e.getMessage());
+        Assertions.assertEquals("Неверный номер семестра", e.getMessage());
 
-        stBooK.addSemester(20);
-        stBooK.addSubject(1, "Project", 0, true);
-        stBooK.addSubject(1, "Analysis", 3, false);
-        stBooK.addSubject(1, "Discrete Math", 4, false);
-        stBooK.addSubject(1, "Declarative Programming", 5, false);
-        stBooK.addSubject(1, "Imperative Programming", 4, false);
-        stBooK.addSubject(1, "History", 5, true);
-        stBooK.addSubject(1, "Speech", 5, true);
+        stBooK.addSubject(1, "Разработка ПАК", 0, true);
+        stBooK.addSubject(1, "Алгебра", 3, false);
+        stBooK.addSubject(1, "Введение в математический анализ", 4, false);
+        stBooK.addSubject(1, "Имперавное пограммирование", 5, false);
+        stBooK.addSubject(1, "Английский", 4, false);
+        stBooK.addSubject(1, "Физра", 5, true);
+        stBooK.addSubject(1, "Основы культры речи", 5, true);
 
         Assertions.assertFalse(stBooK.isScholarship(1));
 
-        stBooK.addSemester(20);
-        stBooK.addSubject(2, "Project", 5, true);
-        stBooK.addSubject(2, "Analysis", 4, true);
-        stBooK.addSubject(2, "Discrete Math", 4, true);
-        stBooK.addSubject(2, "Declarative Programming", 5, true);
-        stBooK.addSubject(2, "Imperative Programming", 5, true);
-        stBooK.addSubject(2, "English", 4, false);
-        stBooK.addSubject(2, "Digital Platforms", 5, true);
+        stBooK.addSubject(2, "Разработка ПАК", 5, true);
+        stBooK.addSubject(2, "Алгебра", 4, true);
+        stBooK.addSubject(2, "Введение в математический анализ", 4, true);
+        stBooK.addSubject(2, "Имперавное пограммирование", 5, true);
+        stBooK.addSubject(2, "Английский", 5, false);
+        stBooK.addSubject(2, "Физра", 4, false);
+        stBooK.addSubject(2, "Основы культры речи", 5, true);
 
         Assertions.assertTrue(stBooK.isScholarship(2));
     }
@@ -127,33 +123,34 @@ public class TestStudentBook {
     public void HonorsDegree() throws Exception {
         StudentBook stBooK = new StudentBook(10);
 
-        stBooK.addSemester(20);
-        stBooK.addSubject(1, "Project", 0, true);
-        stBooK.addSubject(1, "Analysis", 3, false);
-        stBooK.addSubject(1, "Discrete Math", 4, false);
-        stBooK.addSubject(1, "Declarative Programming", 5, false);
-        stBooK.addSubject(1, "Imperative Programming", 4, false);
-        stBooK.addSubject(1, "History", 5, true);
-        stBooK.addSubject(1, "Speech", 5, true);
+        stBooK.addSemester(12);
+        stBooK.addSubject(1, "Разработка ПАК", 0, true);
+        stBooK.addSubject(1, "Алгебра", 3, false);
+        stBooK.addSubject(1, "Введение в математический анализ", 4, false);
+        stBooK.addSubject(1, "Имперавное пограммирование", 5, false);
+        stBooK.addSubject(1, "Английский", 4, false);
+        stBooK.addSubject(1, "Физра", 5, true);
+        stBooK.addSubject(1, "Основы культры речи", 5, true);
+
 
         stBooK.addSemester(20);
-        stBooK.addSubject(2, "Project", 5, true);
-        stBooK.addSubject(2, "Analysis", 4, true);
-        stBooK.addSubject(2, "Discrete Math", 4, true);
-        stBooK.addSubject(2, "Declarative Programming", 5, true);
-        stBooK.addSubject(2, "Imperative Programming", 5, true);
-        stBooK.addSubject(2, "English", 4, false);
-        stBooK.addSubject(2, "Digital Platforms", 5, true);
+        stBooK.addSubject(2, "Разработка ПАК", 5, true);
+        stBooK.addSubject(2, "Алгебра", 4, true);
+        stBooK.addSubject(2, "Введение в математический анализ", 4, true);
+        stBooK.addSubject(2, "Имперавное пограммирование", 5, true);
+        stBooK.addSubject(2, "Английский", 5, false);
+        stBooK.addSubject(2, "Физра", 4, false);
+        stBooK.addSubject(2, "Основы культры речи", 5, true);
 
         Assertions.assertFalse(stBooK.isHonorsDegree());
 
-        stBooK.addSubject(1, "Analysis", 5, false);
-        stBooK.addSubject(2, "Analysis", 5, true);
-        stBooK.addSubject(2, "Discrete Math", 5, true);
+        stBooK.addSubject(1, "Алгебра", 5, false);
+        stBooK.addSubject(2, "Алгебра", 5, true);
+        stBooK.addSubject(2, "Введение в математический анализ", 5, true);
 
         Assertions.assertTrue(stBooK.isHonorsDegree());
 
-        stBooK.addSubject(1, "Analysis", 3, false);
+        stBooK.addSubject(1, "Алгебра", 3, false);
 
         Assertions.assertFalse(stBooK.isHonorsDegree());
     }
