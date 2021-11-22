@@ -9,7 +9,7 @@ public class Semester {
     private int MAX_NUMBERS_OF_SUBJECTS = 12;
     private int subNumbers;
 
-    Semester(int maxSubjects) throws Exception {
+    public Semester(int maxSubjects) throws Exception {
         if (maxSubjects <= 0)
             throw new Exception("Subjects number can not be negative");
 
@@ -28,7 +28,6 @@ public class Semester {
      * @return - кол-во предметов
      */
     public int getSubjectNumbers() {
-
         return subNumbers;
     }
     /**
@@ -52,7 +51,7 @@ public class Semester {
     public void addSubject(String sub, int grade, boolean last) throws Exception {
         if (sub == null ||
                 sub.equals("") ||
-                    grade < 0 || grade > 5)
+                grade < 0 || grade > 5)
             throw new Exception("Неверные данные.");
 
         int index = -1;
