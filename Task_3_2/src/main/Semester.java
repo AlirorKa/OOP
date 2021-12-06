@@ -4,18 +4,10 @@ import java.util.ArrayList;
 
 public class Semester {
 
-    private ArrayList<Subject> subjects;
+    private ArrayList<Subject> subjects = new ArrayList();;
 
     private int MAX_NUMBERS_OF_SUBJECTS = 12;
-    private int subNumbers;
-
-    public Semester(int maxSubjects) throws Exception {
-        if (maxSubjects <= 0)
-            throw new Exception("Subjects number can not be negative");
-
-        subjects = new ArrayList<>();
-        subNumbers = 0;
-    }
+    private int subNumbers = 0;
 
     /**
      * @return - макс кол-во предметов
@@ -49,7 +41,7 @@ public class Semester {
      * @throws Exception - если наименование пустое или null, оценка отрицательная или больше 5, или попытка добавить предметов больше, чем MAX_NUMBERS_OF_SUBJECTS
      */
     public void addSubject(String sub, int grade, boolean last) throws Exception {
-        
+
         int index = -1;
         for(Subject s : subjects) {
             if (s.getSub().equals(sub))
