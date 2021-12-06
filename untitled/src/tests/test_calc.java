@@ -58,7 +58,7 @@ public class test_calc {
         Assertions.assertEquals(e.getMessage(), "I don't know this symbol: ^");*/
     }
 
-
+    /*
     @Test
     public void TestComplex() throws Exception {
         String[] test = new String[0];
@@ -67,7 +67,7 @@ public class test_calc {
         test[0] = "+ +1 +1i +1 +1i";
         Assertions.assertEquals(170.20000000000002, Calculator_C.calculate(test[0]));
 
-      /*  test[1] =;
+        test[1] =;
         test[2] =;
         test[3] =;
         test[4] =;
