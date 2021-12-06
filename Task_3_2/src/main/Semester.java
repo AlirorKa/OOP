@@ -49,11 +49,7 @@ public class Semester {
      * @throws Exception - если наименование пустое или null, оценка отрицательная или больше 5, или попытка добавить предметов больше, чем MAX_NUMBERS_OF_SUBJECTS
      */
     public void addSubject(String sub, int grade, boolean last) throws Exception {
-        if (sub == null ||
-                sub.equals("") ||
-                grade < 0 || grade > 5)
-            throw new Exception("Неверные данные.");
-
+        
         int index = -1;
         for(Subject s : subjects) {
             if (s.getSub().equals(sub))
