@@ -91,8 +91,8 @@ public class Test_SB {
     @Test
     public void Scholarship() throws Exception {
         StudentBook stBooK = new StudentBook(10);
-        Exception e;
 
+        Exception e;
         e = Assertions.assertThrows(Exception.class, () -> {
             stBooK.isScholarship(1);
         });
