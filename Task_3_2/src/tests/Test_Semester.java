@@ -9,16 +9,16 @@ public class Test_Semester {
     @Test
     public void Add_Subjects() throws Exception {
         Semester semestr = new Semester(12);
-        String s = "a";
+        String s = "1";
         for (int i = 0; i < semestr.getMAX_NUMBERS_OF_SUBJECTS(); i++) {
             semestr.addSubject(s, 0, false);
-            s += "a";
+            s += "1";
         }
         Exception e = Assertions.assertThrows(Exception.class, () -> {
-            semestr.addSubject("b", 0, false);
+            semestr.addSubject("новый", 0, false);
         });
 
-        Assertions.assertEquals("Слишком много предметов.", e.getMessage());
+        Assertions.assertEquals("Больше нельзя добавить предметов.", e.getMessage());
 
         Semester semestr2 = new Semester(12);
         e = Assertions.assertThrows(Exception.class, () -> {semestr2.addSubject("", 5, true);});
@@ -33,7 +33,7 @@ public class Test_Semester {
 
     @Test
     public void Average_Grade() throws Exception {
-        Semester semestr = new Semester(12);
+        Semester semestr = new Semester(20);
 
         Assertions.assertEquals(0, semestr.getSubjectNumbers());
         Assertions.assertEquals(0, semestr.getAverageGrade());
@@ -63,7 +63,7 @@ public class Test_Semester {
 
     @Test
     public void isScholarship() throws Exception {
-        Semester semestr = new Semester(12);
+        Semester semestr = new Semester(20);
 
         semestr.addSubject("Модели вычислений", 4, false);
         semestr.addSubject("Декларативное программирование", 4, false);
