@@ -36,7 +36,7 @@ public class StudentBook {
      * @throws Exception - если добавляют больше , чем макс кол-во семестров MAX_NUMBER_OF_SEMESTERS
      */
     public void addSemester(int maxSubjects) throws Exception {
-        if (semNumbers >= max_num_of_Semesters)
+        if (semNumbers >= MAX_NUMBER_OF_SEMESTERS)
             throw new Exception("Слмшком много семестров.");
 
         if (maxSubjects <= 0)
