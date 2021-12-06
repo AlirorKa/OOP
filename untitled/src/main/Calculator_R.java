@@ -14,6 +14,15 @@ public class Calculator_R {
         }
     }
 
+    private static double safePop(Stack stack) throws Exception {
+        try {
+            return stack.pop();
+        } catch (NumberFormatException e) {
+            throw new Exeption("Stack has not enough elements for operaton.");
+        }
+    }
+
+    
     public static double calculate(String str) throws Exception {
         String[] strNumbers = str.split(" ");
         Stack<Double> numbers = new Stack<>();
