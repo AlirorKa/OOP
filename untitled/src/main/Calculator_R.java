@@ -34,15 +34,15 @@ public class Calculator_R {
                 try {
                     NumberOperations operation = NumberOperationsHelper.getOperation(strNumbers[i]);
                     switch (operation) {
-                        case Add -> numbers.push(numbers.pop() + numbers.pop());
-                        case Subtract -> numbers.push(numbers.pop() - numbers.pop());
-                        case Divide -> numbers.push(numbers.pop() / numbers.pop());
-                        case Multiply -> numbers.push(numbers.pop() * numbers.pop());
-                        case Log -> numbers.push(Math.log(numbers.pop()));
-                        case Sin -> numbers.push(Math.sin(numbers.pop()));
-                        case Cos -> numbers.push(Math.cos(numbers.pop()));
-                        case Pow -> numbers.push(Math.pow(numbers.pop(), numbers.pop()));
-                        case Sqrt -> numbers.push(Math.sqrt(numbers.pop()));
+                        case Add -> numbers.push(numbers.safePop() + numbers.safePop());
+                        case Subtract -> numbers.push(numbers.safePop() - numbers.safePop());
+                        case Divide -> numbers.push(numbers.safePop() / numbers.safePop());
+                        case Multiply -> numbers.push(numbers.safePop() * numbers.safePop());
+                        case Log -> numbers.push(Math.log(numbers.safePop()));
+                        case Sin -> numbers.push(Math.sin(numbers.safePop()));
+                        case Cos -> numbers.push(Math.cos(numbers.safePop()));
+                        case Pow -> numbers.push(Math.pow(numbers.safePop(), numbers.safePop()));
+                        case Sqrt -> numbers.push(Math.sqrt(numbers.safePop()));
                         default -> {
                             System.out.println("My calculator isn't so smart to do this");
                             throw new Exception("Invalid operation");
@@ -54,7 +54,7 @@ public class Calculator_R {
             }
         }
 
-        double answer = numbers.pop();
+        double answer = numbers.safePop();
         if (numbers.isEmpty()) {
             return answer;
         } else {
