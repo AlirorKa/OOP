@@ -6,8 +6,18 @@ public class Semester {
 
     private ArrayList<Subject> subjects = new ArrayList();;
 
-    private int MAX_NUMBERS_OF_SUBJECTS = 12;
+    private int MAX_NUMBERS_OF_SUBJECTS;
     private int subNumbers = 0;
+
+   public Semester(int maxSubjects) throws Exception {
+        if (maxSubjects <= 0)
+            throw new Exception("Количество прелмтов не может быть отрицательным");
+
+        subjects = new ArrayList<>();
+       MAX_NUMBERS_OF_SUBJECTS = maxSubjects;
+        subNumbers = 0;
+    }
+
 
     /**
      * @return - макс кол-во предметов
