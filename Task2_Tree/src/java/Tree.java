@@ -173,8 +173,8 @@ class Tree<T extends Comparable<T>> {
         System.out.println();
     }
 
-    @Override
+    /* @Override
     public String toString() {
         return val.toString();
-    }
+    } */
 }
