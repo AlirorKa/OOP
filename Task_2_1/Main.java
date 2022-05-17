@@ -19,7 +19,7 @@ public class Main {
         boolean t_Thread = threads.isPrime(numbers, 4);
         long threadEnd = System.nanoTime();
         long threadTime = threadEnd - threadStart;
-        System.out.println("Threads: " + t_Thread + " " + threadTime)
+        System.out.println("Threads: " + t_Thread + " " + threadTime);
 
 	// parallel
         PrimeNumberStream stream = new PrimeNumberStream();
