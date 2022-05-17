@@ -1,7 +1,10 @@
 public class Main {
     public static void main(String[] args) throws Exception {
-        int[] numbers = PrimeNumberGenerator.Generate(1000, 1000);
-
+        int[] numbers = new int[10];
+	for (int i = 0; i < numbers.lenght; i++){
+		numbers[i] = 895087;
+	}
+	    
 	// consistent
         PrimeNumber primeNumber = new PrimeNumber();
         long consistentStart = System.nanoTime();
