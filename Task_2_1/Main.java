@@ -9,7 +9,7 @@ public class Main {
         PrimeNumber primeNumber = new PrimeNumber();
         long consistentStart = System.nanoTime();
         boolean consistent = primeNumber.isAllPrime(numbers);
-	consistentEnd = System.nanoTime();
+	long consistentEnd = System.nanoTime();
         long consistentTime = consistentEnd - consistentStart;
         System.out.println("Consistent: " + consistent + " " + consistentTime);
 
